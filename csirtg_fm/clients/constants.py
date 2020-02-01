@@ -1,0 +1,10 @@
+import os
+
+FETCHER_TIMEOUT = os.getenv('CSIRTG_FM_FETCHER_TIMEOUT', 120)
+RETRIES = os.getenv('CSIRTG_FM_FETCHER_RETRIES', 3)
+RETRIES_DELAY = os.getenv('CSIRTG_FM_FETCHER_RETRY_DELAY', 30)  # seconds
+NO_HEAD = os.getenv('CSIRTG_FM_FETCHER_NOHEAD')
+
+TRACE = False
+if os.getenv('CSIRTG_FM_HTTP_TRACE', '0') == '1':
+    TRACE = True
