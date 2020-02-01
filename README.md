@@ -22,6 +22,6 @@ If you've never worked on a GitHub project, [this is a good piece](https://guide
 
 # COPYRIGHT AND LICENCE
 
-Copyright (C) 2018 [CSIRT Gadgets](http://csirtgadgets.com)
+Copyright (C) 2020 [CSIRT Gadgets](http://csirtgadgets.com)
 
 Free use of this software is granted under the terms of the Mozilla Public License (MPL2). For details see the file `LICENSE` included with the distribution.
