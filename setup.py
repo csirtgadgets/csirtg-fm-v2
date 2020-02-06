@@ -55,7 +55,7 @@ setup(
     scripts=[],
     entry_points={
         'console_scripts': [
-            'csirtg-fm=csirtg_fm:main',
+            'csirtg-fm=csirtg_fm.cli:main',
         ]
     },
 )
