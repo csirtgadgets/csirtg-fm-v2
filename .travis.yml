@@ -16,7 +16,7 @@ notifications:
     on_failure: never
 deploy:
   provider: pypi
-  user: wesyoung
+  user: __token__
   on:
     branch: master
     tags: true
