@@ -5,14 +5,14 @@ from csirtg_fm.utils.rules import load_rules
 from csirtg_fm.clients.http import Client
 from csirtg_fm.content import get_type
 from pprint import pprint
-rule = 'test/fm/csirtg/csirtg.yml'
+rule = 'test/csirtg/csirtg.yml'
 
 
 def test_csirtg_darknet():
     feed = 'csirtgadgets/darknet'
     r, f, _ = next(load_rules(rule, feed))
 
-    r['feeds'][feed]['remote'] = 'test/fm/csirtg/feed.txt'
+    r['feeds'][feed]['remote'] = 'test/csirtg/feed.txt'
 
     cli = Client(r, f)
     s = FM(client='stdout')

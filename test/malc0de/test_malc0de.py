@@ -4,7 +4,7 @@ from csirtg_fm import FM
 from csirtg_fm.content import get_type
 from pprint import pprint
 
-rule = 'test/fm/malc0de/malc0de.yml'
+rule = 'test/malc0de/malc0de.yml'
 s = FM()
 
 

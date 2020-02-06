@@ -36,9 +36,12 @@ def load_rules(rule, feed=None):
                 rule = yaml.safe_load(F)
 
         if feed:
+            from pprint import pprint
+            pprint(rule)
             try:
                 rule['feeds'] = {feed: rule['feeds'][feed]}
             except Exception as e:
+
                 logger.debug(e, exc_info=True)
                 return None
 

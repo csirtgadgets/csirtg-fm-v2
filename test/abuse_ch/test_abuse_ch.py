@@ -1,8 +1,9 @@
 
 from csirtg_fm import FM
+from csirtg_fm.utils.rules import load_rules
 from csirtg_fm.content import get_type
 
-rule = 'test/fm/abuse_ch/abuse_ch.yml'
+rule = 'test/abuse_ch/abuse_ch.yml'
 s = FM()
 
 
@@ -11,6 +12,8 @@ def test_abuse_ch_urlhaus():
     tags = set()
 
     from csirtg_fm.clients.http import Client
+    r = load_rules(rule, 'urlhaus')
+
     cli = Client(rule, 'urlhaus')
 
     parser_name = get_type(cli.cache)

@@ -15,7 +15,7 @@ from csirtg_fm.constants import FIREBALL_SIZE
 
 from csirtg_fm.utils.rules import load_rules
 from csirtg_fm.utils.indicator import format_keys
-from .archiver import NOOPArchiver
+from csirtg_fm.archiver import NOOPArchiver
 
 FORMAT = os.getenv('CSIRTG_FM_FORMAT', 'table')
 STDOUT_FIELDS = COLUMNS
@@ -36,7 +36,6 @@ class FM(object):
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.client.__exit__()
-        return
 
     def __init__(self, **kwargs):
         self.archiver = kwargs.get('archiver', NOOPArchiver())
@@ -134,7 +133,3 @@ class FM(object):
 
             # commit
             self.archiver.commit()
-
-from ._version import get_versions
-__version__ = get_versions()['version']
-del get_versions

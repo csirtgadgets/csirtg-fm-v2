@@ -23,7 +23,7 @@ from csirtg_fm.utils import setup_logging, get_argument_parser, \
 from csirtg_fm.content import get_type
 from csirtg_fm import FM
 from csirtg_fm.utils.rules import load_rules
-from archiver import Archiver, NOOPArchiver
+from csirtg_fm.archiver import Archiver, NOOPArchiver
 
 FORMAT = os.getenv('CSIRTG_FM_FORMAT', 'table')
 STDOUT_FIELDS = COLUMNS
@@ -348,11 +348,9 @@ def main():
 
     except KeyboardInterrupt:
         logger.info('exiting..')
-        pass
 
     except Exception as e:
         logger.error(e)
-        pass
 
 
 if __name__ == "__main__":

@@ -2,11 +2,9 @@ import os.path
 import tempfile
 import re
 
-# from ._version import get_versions
-# __version__ = get_versions()['version']
-# del get_versions
-
-VERSION = '2.0a0'
+from ._version import get_versions
+VERSION = get_versions()['version']
+del get_versions
 
 
 TEMP_DIR = os.path.join(tempfile.gettempdir())

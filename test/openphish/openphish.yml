@@ -1,5 +1,5 @@
 feeds:
   urls:
-    remote: test/fm/openphish/feed.txt
+    remote: test/openphish/feed.txt
     defaults:
       tags: phishing

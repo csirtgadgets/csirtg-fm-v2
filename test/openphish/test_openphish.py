@@ -1,7 +1,7 @@
 from csirtg_fm import FM
 from csirtg_fm.content import get_type
 
-rule = 'test/fm/openphish/openphish.yml'
+rule = 'test/openphish/openphish.yml'
 s = FM()
 
 

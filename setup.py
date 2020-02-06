@@ -22,8 +22,7 @@ if sys.argv[-1] == 'test':
         err_msg = e.message.replace("No module named ", "")
         msg = "%s is not installed. Install your test requirements." % err_msg
         raise ImportError(msg)
-    r = os.system('py.test test -v --cov=csirtg_fm --cov-fail-under=50 '
-                  '--pep8')
+    r = os.system('pytest test -v --cov=csirtg_fm --cov-fail-under=50')
     if r == 0:
         sys.exit()
     else:
@@ -47,6 +46,10 @@ setup(
     packages=find_packages(exclude=["test"]),
     install_requires=[
         'prettytable',
+        'feedparser',
+        'requests',
+        'python-magic',
+        'arrow',
         'csirtg_indicator>=3.0a1,<4.0',
     ],
     scripts=[],

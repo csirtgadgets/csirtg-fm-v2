@@ -3,7 +3,7 @@ from csirtg_fm.content import get_type
 from csirtg_fm.utils import decode
 from csirtg_dt import get as parse_timestamp
 
-rule = 'test/fm/phishtank/phishtank.yml'
+rule = 'test/phishtank/phishtank.yml'
 s = FM()
 
 
@@ -14,7 +14,7 @@ def test_phishtank_urls():
     from csirtg_fm.clients.http import Client
     cli = Client(rule, 'urls')
     cli.cache = decode(cli.cache)
-    cli.cache = 'test/fm/phishtank/feed.json'
+    cli.cache = 'test/phishtank/feed.json'
 
     parser_name = get_type(cli.cache)
     assert parser_name == 'json'
