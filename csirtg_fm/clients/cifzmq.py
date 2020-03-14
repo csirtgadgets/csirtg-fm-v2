@@ -10,11 +10,5 @@ class CIF(ZMQ):
 
         super(CIF, self).__init__(**kwargs)
 
-    def ping(self):
-        return self.ping()
-
-    def ping_write(self):
-        return self.ping_write()
-
 
 Plugin = CIF

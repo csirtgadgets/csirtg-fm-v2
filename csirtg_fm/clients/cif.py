@@ -7,8 +7,5 @@ class CIF(HTTPClient):
         super(CIF, self).__init__(**kwargs)
         self.nowait = True
 
-    def ping(self):
-        return self.ping_write()
-
 
 Plugin = CIF
