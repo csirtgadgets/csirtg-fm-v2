@@ -24,7 +24,7 @@ def _load_rules_dir(path):
             yield r, feed, f
 
 
-def load_rules(rule, feed=None):
+def _load_rules(rule, feed=None):
     if os.path.isdir(rule):
         for r, feed, f in _load_rules_dir(rule):
             yield r, feed, f
@@ -34,6 +34,9 @@ def load_rules(rule, feed=None):
         if os.path.isfile(rule):
             with open(rule) as F:
                 rule = yaml.safe_load(F)
+
+        if not isinstance(rule, dict):
+            raise FileNotFoundError(f"unable to find/load {rule}")
 
         if feed:
             try:
@@ -45,3 +48,12 @@ def load_rules(rule, feed=None):
 
         for f in rule['feeds']:
             yield rule, f, path
+
+
+def load_rules(rule, feed=None):
+    if ',' in rule:
+        for r in rule.split(','):
+            yield from _load_rules(r, feed)
+
+    else:
+        yield from _load_rules(rule, feed)
