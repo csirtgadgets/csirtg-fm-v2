@@ -339,7 +339,7 @@ def main():
     _run_fork()
 
     main_loop = ioloop.IOLoop()
-    service_interval = (service_interval * 10000)
+    service_interval = (service_interval * (1000 * 60))
     loop = ioloop.PeriodicCallback(_run_fork, service_interval)
 
     try:
